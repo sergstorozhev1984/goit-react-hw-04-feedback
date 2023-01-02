@@ -1,3 +1,4 @@
+import  PropTypes from 'prop-types';
 import css from './FeedbackOptions.module.css';
 export const FeedbackOptions = ({ options, handleClick }) => {
   return (
@@ -14,3 +15,8 @@ export const FeedbackOptions = ({ options, handleClick }) => {
     </ul>
   );
 };
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  handleClick: PropTypes.func.isRequired,
+}
