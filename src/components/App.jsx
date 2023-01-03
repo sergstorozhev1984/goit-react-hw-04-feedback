@@ -18,9 +18,8 @@ export class App extends Component {
   };
 
   countTotalFeedback = () => {
-    let sum = 0;
-    const feedbackArr = Object.values(this.state);
-    feedbackArr.forEach(el => (sum += el));
+    const {good, bad, neutral} = this.state;
+    let sum = good + bad + neutral;
     return sum;
   };
 
