@@ -1,10 +1,12 @@
 import  PropTypes from 'prop-types';
 import css from './FeedbackOptions.module.css';
+
 export const FeedbackOptions = ({ options, handleClick }) => {
-  // console.log(options);
+  const optionsKey = Object.keys(options);
+
   return (
     <ul className={css.feedbackList}>
-      {options.map((option) => {
+      {optionsKey.map((option) => {
         const label = option.charAt(0).toUpperCase() + option.slice(1);
 
         return (
@@ -18,6 +20,6 @@ export const FeedbackOptions = ({ options, handleClick }) => {
 };
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  options: PropTypes.objectOf(PropTypes.number.isRequired).isRequired,
   handleClick: PropTypes.func.isRequired,
 }
